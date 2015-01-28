@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebApplication9.Models.Runner>
+
+@{
+    ViewBag.Title = "Runners";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mileage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfTraining)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mileage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfTraining)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RunnerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RunnerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RunnerID })
+        </td>
+    </tr>
+}
+
+</table>
